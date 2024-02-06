@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link  type="text/css" rel="stylesheet" href="css/reset.css">
+    <link  type="text/css" rel="stylesheet" href="css/style.css">
+    <title>Challenge Encriptador - Ricardo Leyva Bueno</title>
+</head>
+<body>
+    <img class="logo" src="img/Logo.png" alt="Logo" class="logo" onclick="restablecer()">
+    <main>
+        <div class="izquierda">
+            <div contenteditable class="input" id="input"></div>
+            <!-- <textarea class="input"name="input" id="input" placeholder="Ingrese el texto aqui"></textarea> -->
+            <div class="botones">
+                <p><img src="img/exclamacion.png" title="*Se eliminarán automaticamente mayusculas y acentos" />    Solo letras minúsculas y sin acentos</p>
+                <div class="area-botones">
+                    <button class="btn-full" id="encriptar" onclick="encriptar()">Encriptar</button>
+                    <button class="btn-line" id="desencriptar" onclick="desencriptar()">Desencriptar</button>
+                </div>
+            </div>
+        </div>
+        <div class="derecha">
+            <div class="output">
+                <div class="area-output-con-datos"><div readonly class="area-output" id="output"></div></div>
+                <!-- <div class="area-output-con-datos"><textarea readonly class="area-output"name="area-output" id="area-output" placeholder="">Aqui aparecera el mensaje encriptado</textarea></div> -->
+                <div class="area-output-sin-datos"><img src="img/Muñeco.png" /><a>Ningún mensaje fue encontrado</a><b>Ingresa el texto que desees encriptar o desencriptar.</b></div>
+                <div class="botones">
+                    <div class="area-botones">
+                        <button class="btn-line-output" id="copiar" onclick="copiar()">Copiar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+<script src="js/scripts.js"></script>
+</body>
+</html>
