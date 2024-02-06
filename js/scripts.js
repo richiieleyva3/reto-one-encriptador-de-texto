@@ -79,7 +79,7 @@ function restablecer() {
     botonCopiar.style.display = 'none';
 }
 
-// Evento para verificar que se no se ingrese el patron (mayusculas y acentos) en el input
+// Evento para verificar que se no se ingrese el patron (mayusculas y acentos) en el input en dispositivos touch
 function patron(elemento) {
     // Obtener el contenido del div
     let contenido = elemento.innerText;
@@ -96,7 +96,7 @@ function patron(elemento) {
         let sel = window.getSelection();
 
         // Mover el rango al final del div
-        range.setStart(input, input.childNodes.length);
+        range.setStart(elemento, elemento.childNodes.length);
         range.collapse(true);
 
         // Eliminar cualquier selección existente y añadir el nuevo rango

@@ -12,7 +12,7 @@
     <img class="logo" src="img/Logo.png" alt="Logo" class="logo" onclick="restablecer()">
     <main>
         <div class="izquierda">
-            <div contenteditable class="input" id="input" oninput="patron(this)" inputmode="text" autocorrect="off" autocapitalize="none"></div>
+            <div contenteditable class="input" id="input" oninput="patron(this)" onkeypress="return (event.charCode >= 97 && event.charCode <= 122 || event.charCode == 32)" inputmode="text" autocorrect="off" autocapitalize="none"></div>
             <!-- <textarea class="input"name="input" id="input" placeholder="Ingrese el texto aqui"></textarea> -->
             <div class="botones">
                 <p><img src="img/exclamacion.png" title="*Se eliminarán automaticamente mayusculas y acentos" />    Solo letras minúsculas y sin acentos</p>
