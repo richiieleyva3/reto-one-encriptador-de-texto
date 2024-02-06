@@ -7,7 +7,7 @@ let areaOutputSinDatos = document.getElementsByClassName('area-output-sin-datos'
 // Obtenemos el área de output con datos
 let areaOutputConDatos = document.getElementsByClassName('area-output-con-datos')[0];
 // Obtenemos el botón de copiar
-let botonCopiar = document.getElementsByClassName('btn-line-output')[0];
+let botonCopiar = document.getElementById('copiar');
 
 // Evento que encripta el texto del div input
 function encriptar() {
@@ -67,7 +67,20 @@ function copiar() {
         alert('No hay resultados. Debes ingresar un texto para encriptar o desencriptar y pulsar el botón correspondiente.');
         return;
     }
-    navigator.clipboard.writeText(output.innerHTML);
+    // Verificar si el navegador admite el acceso al portapapeles
+    if (navigator.clipboard) {
+        // Intentar copiar al portapapeles
+        navigator.clipboard.writeText(output.innerText)
+            .then(() => {
+                alert('Texto copiado al portapapeles');
+            })
+            .catch(err => {
+                alert('Error al copiar texto al portapapeles. Por favor, seleccione el texto y copie manualmente.');
+            });
+    } else {
+        // Si el navegador no admite el acceso al portapapeles, indica al usuario que copie manualmente
+        alert('Seleccione el texto y cópielo manualmente, porque su navegador no admite el acceso al portapapeles.');
+    }
 }
 
 // Evento que restablece la pagina al dar clic en el logotipo
