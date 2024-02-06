@@ -12,18 +12,18 @@ let botonCopiar = document.getElementsByClassName('btn-line-output')[0];
 // Evento que encripta el texto del div input
 function encriptar() {
     // Si el input esta vacio, mostramos un mensaje de alerta y salimos de la función
-    if (input.innerHTML === '') {
+    if (input.innerText === '') {
         alert('Debes ingresar un texto para encriptar');
         return;
     }
     // Encriptamos el texto
-    let texto = input.innerHTML;
+    let texto = input.innerText;
     texto = texto
-    .replace('e', 'enter')
-    .replace('i', 'imes')
-    .replace('a', 'ai')
-    .replace('o', 'ober')
-    .replace('u', 'ufat');
+    .replace(/e/g, 'enter')
+    .replace(/i/g, 'imes')
+    .replace(/a/g, 'ai')
+    .replace(/o/g, 'ober')
+    .replace(/u/g, 'ufat');
     output.innerHTML = texto;
     // ocultamos el área de output sin datos, mostramos el área de output con datos y el boton copiar
     areaOutputSinDatos.style.display = 'none';
@@ -35,12 +35,12 @@ function encriptar() {
 // Evento que desencripta el texto del div input
 function desencriptar() {
     // Si el input esta vacio, mostramos un mensaje de alerta y salimos de la función
-    if (input.innerHTML === '') {
+    if (input.innerText === '') {
         alert('Debes ingresar un texto para encriptar');
         return;
     }
     // Desencriptamos el texto
-    let texto = input.innerHTML;
+    let texto = input.innerText;
     texto = texto
     .replace(/enter/g, 'e')
     .replace(/imes/g, 'i')
