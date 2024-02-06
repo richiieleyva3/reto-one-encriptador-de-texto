@@ -42,11 +42,17 @@ function desencriptar() {
     // Desencriptamos el texto
     let texto = input.innerText;
     texto = texto
-    .replace(/enter/g, 'e')
-    .replace(/imes/g, 'i')
-    .replace(/ai/g, 'a')
-    .replace(/ober/g, 'o')
-    .replace(/ufat/g, 'u');
+    .replace(/enter/g, '-enter-')
+    .replace(/imes/g, '-imes-')
+    .replace(/ai/g, '-ai-')
+    .replace(/ober/g, '-ober-')
+    .replace(/ufat/g, '-ufat-');
+    texto = texto
+    .replace(/-enter-/g, 'e')
+    .replace(/-imes-/g, 'i')
+    .replace(/-ai-/g, 'a')
+    .replace(/-ober-/g, 'o')
+    .replace(/-ufat-/g, 'u');
     output.innerHTML = texto;
     // ocultamos el área de output sin datos, mostramos el área de output con datos y el boton copiar
     areaOutputSinDatos.style.display = 'none';
