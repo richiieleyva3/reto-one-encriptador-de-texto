@@ -80,12 +80,24 @@ function restablecer() {
 }
 
 // Evento que al presionar una tecla en el div input, verifica si es una letra mayúscula o una tilde y la elimina
-input.addEventListener('keypress', function(event) {
+input.addEventListener('keypress touch', function(event) {
     let caracter = event.key;
     if (/[A-ZÁÉÍÓÚáéíóú´]/.test(caracter)) {
         event.preventDefault();
     }
 });
+
+// Evento para verificar que se no se ingrese el patron (mayusculas y acentos) en el input
+function patron(elemento) {
+    // Obtener el contenido del div
+    let contenido = elemento.innerText;
+
+    // Validar si el contenido contiene alguna letra mayúscula
+    if (/[A-ZÁÉÍÓÚáéíóú´]/.test(contenido)) {
+        // Reemplazar las letras mayúsculas con sus equivalentes en minúsculas
+        elemento.innerText = '';
+    }
+}
 
 // Evento que convierte el texto pegado en input en texto plano
 input.addEventListener('paste', function(event) {
